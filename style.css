@@ -7,8 +7,6 @@ Author URI: https://longvietweb.com/
 
 Version: 1.0
 
-Tags: accessibility-ready, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, left-sidebar, one-column, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, two-columns, wide-blocks
-
 Template: genesis
 
 License: GPL-2.0-or-later
@@ -1451,10 +1449,6 @@ img#wpstats {
 .nav-primary {
 	background-color: #222;
 	color: #fff;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
 	z-index: 999;
 }
 

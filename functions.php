@@ -243,9 +243,6 @@ function genesis_child_theme_setting_defaults() {
 	update_option( 'posts_per_page', 5 );
 
 }
-//* Reposition the breadcrumbs
-remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-add_action( 'genesis_after_header', 'genesis_do_breadcrumbs' );
 
 // Home breadcrumb icon.
 add_filter ( 'genesis_home_crumb', 'genesis_child_breadcrumb_home_icon' ); 

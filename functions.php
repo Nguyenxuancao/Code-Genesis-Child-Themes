@@ -243,3 +243,35 @@ function genesis_child_theme_setting_defaults() {
 	update_option( 'posts_per_page', 5 );
 
 }
+//* Reposition the breadcrumbs
+remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+add_action( 'genesis_after_header', 'genesis_do_breadcrumbs' );
+
+// Home breadcrumb icon.
+add_filter ( 'genesis_home_crumb', 'genesis_child_breadcrumb_home_icon' ); 
+function genesis_child_breadcrumb_home_icon( $crumb ) {
+     $crumb = '<a href="' . home_url() . '" title="' . get_bloginfo('name') . '"><i class="dashicons dashicons-admin-home"></i> Home</a>';
+     return $crumb;
+}
+//* Modify breadcrumb arguments.
+add_filter( 'genesis_breadcrumb_args', 'genesis_child_breadcrumb_args' );
+function genesis_child_breadcrumb_args( $args ) {
+	$args['home'] = 'Home';   // Can be changed by adding text in quotation marks ' '
+	$args['sep'] = ' / ';     // Can be changed by adding text in quotation marks ' '
+	$args['list_sep'] = ', '; // Can be changed by adding text in quotation marks ' '
+	$args['prefix'] = '<div class="breadcrumb"><div class="wrap">'; // Can be changed by adding text in quotation marks ' '
+	$args['suffix'] = '</div></div>';
+	$args['heirarchial_attachments'] = true; // Can be changed by adding text in quotation marks ' ' Genesis 1.5 and later
+	$args['heirarchial_categories'] = true;  // Can be changed by adding text in quotation marks ' ' Genesis 1.5 and later
+	$args['display'] = true;
+	$args['labels']['prefix'] = 'LongViet :';  // Can be changed by adding text in quotation marks ' '
+	$args['labels']['author'] = 'Archives for ';   // Can be changed by adding text in quotation marks ' '
+	$args['labels']['category'] = 'Archives for '; // Can be changed by adding text in quotation marks ' ' Genesis 1.6 and later
+	$args['labels']['tag'] = 'Archives for ';      // Can be changed by adding text in quotation marks ' '
+	$args['labels']['date'] = 'Archives for ';     // Can be changed by adding text in quotation marks ' '
+	$args['labels']['search'] = 'Search for ';     // Can be changed by adding text in quotation marks ' '
+	$args['labels']['tax'] = 'Archives for ';      // Can be changed by adding text in quotation marks ' '
+	$args['labels']['post_type'] = 'Archives for ';// Can be changed by adding text in quotation marks ' '
+	$args['labels']['404'] = 'Not found: ';        // Can be changed by adding text in quotation marks ' ' Genesis 1.5 and later
+return $args;
+}

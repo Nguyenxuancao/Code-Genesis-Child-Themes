@@ -1705,7 +1705,7 @@ li.comment {
 }
 
 .sidebar li {
-	border-bottom: 1px dotted #888;
+	border-bottom: 1px solid #888;
 	margin-bottom: 6px;
 	padding-bottom: 6px;
 }

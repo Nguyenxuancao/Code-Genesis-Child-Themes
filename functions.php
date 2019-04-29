@@ -29,6 +29,9 @@ function genesis_child_localization_setup() {
 
 }
 
+// Add Featured Posts List.
+include_once( get_stylesheet_directory() . '/lib/featured-posts.php' );
+
 // Enqueue required fonts, scripts, and styles.
 add_action( 'wp_enqueue_scripts', 'genesis_child_enqueue_scripts' );
 function genesis_child_enqueue_scripts() {
